@@ -1,0 +1,30 @@
+{
+  "name": "umnlib/pipeline",
+  "description": "A PHP package for unix-like pipes, where the output of one segment is the input to the next.",
+  "keywords": [],
+  "authors": [
+    {
+      "name": "David Naughton",
+      "email": "naughton@umn.edu"
+    }
+  ],
+
+  "require": {
+  },
+
+  "repositories": [
+  ],   
+
+  "require-dev": {
+    "phpunit/phpunit": ">=3.7",
+    "symfony/finder": "v2.5.2"
+  },
+
+  "autoload": {
+    "psr-4": {"UmnLib\\Core\\": "src/"}
+  },
+
+  "autoload-dev": {
+    "psr-4": {"UmnLib\\Core\\Tests\\": "tests/"}
+  }
+}

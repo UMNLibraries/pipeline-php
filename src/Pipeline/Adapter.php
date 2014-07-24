@@ -1,13 +1,15 @@
 <?php
 
-class Pipeline_Adapter extends Pipeline_Processor
+namespace UmnLib\Core\Pipeline;
+
+class Adapter extends \UmnLib\Core\Pipeline\Processor
 {
     protected $container;
     public function container()
     {
         return $this->container;
     }
-    protected function set_container($container)
+    protected function setContainer($container)
     {
         $this->container = $container;
     }
@@ -17,25 +19,25 @@ class Pipeline_Adapter extends Pipeline_Processor
     {
         return $this->function;
     }
-    protected function set_function($function)
+    protected function setFunction($function)
     {
         $this->function = $function;
     }
 
     public function __construct($container)
     {
-        $this->set_container( $container );
+        $this->setContainer( $container );
     }
 
     public function process($key, $current)
     {
         // key should be the record id:
-        $record_id = $key;
+        $recordId = $key;
         // Current should be a citation array:
         $citation = $current;
         // TODO: Make the loader return the created node object or array!
-        $this->loader()->load( $citation );
-        return array($record_id, $citation); // TODO: Should be ($node_id, $node)
+        $this->loader()->load($citation);
+        return array($recordId, $citation); // TODO: Should be ($node_id, $node)
 
         // Input:
         array(
